@@ -4,13 +4,17 @@
 #define FALSE 0
 #define TRUE 1
 
+#define MAX_KEYS 99
+#define MAX_CHILDS 100
+
 #ifndef __BFUN__
 #define __BFUN__
 
 typedef struct node_s
 {
     int nKeys;
-    int *keys;
+    int keys[MAX_KEYS];
+    struct node_s *childs[MAX_CHILDS];
     char isLeave;
 } node;
 
