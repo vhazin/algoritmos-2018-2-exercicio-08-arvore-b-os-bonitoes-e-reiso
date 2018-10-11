@@ -7,6 +7,9 @@
 #define MAX_KEYS 99
 #define MAX_CHILDS 100
 
+#define M 3
+#define GMIN 2 // grau minimo da arvore (se precisar, fazer por metodo de input)
+
 #ifndef __BFUN__
 #define __BFUN__
 
@@ -24,6 +27,10 @@ typedef struct bTree_s
     int order;
 } bTree;
 
-void create();
+void create(bTree *Tree, int order);
+void splitChild(node *father, int position, int order);
+void insert(bTree *myTree, int value);
+void insertNonfull(node *Node, int value, int order);
+void print(node *root);
 
 #endif
