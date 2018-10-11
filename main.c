@@ -11,9 +11,10 @@ int main(void)
     while (TRUE)
     {
         scanf("%d", &value);
-        if (!value)
+        if (value == 0)
             break;
         insert(myTree, value);
+        printf("inseri\n");
     }
     print(myTree->root);
     return 0;
