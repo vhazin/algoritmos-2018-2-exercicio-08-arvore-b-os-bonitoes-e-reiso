@@ -8,9 +8,11 @@ int main(void)
     scanf("%d", &value);
     order = value;
     create(myTree, order);
-    while (value)
+    while (TRUE)
     {
         scanf("%d", &value);
+        if (!value)
+            break;
         insert(myTree, value);
     }
     print(myTree->root);
