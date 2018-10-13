@@ -1,36 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FALSE 0
-#define TRUE 1
-
-#define MAX_KEYS 99
-#define MAX_CHILDS 100
-
-#define M 3
-#define GMIN 2 // grau minimo da arvore (se precisar, fazer por metodo de input)
-
 #ifndef __BFUN__
 #define __BFUN__
+
+#define ORDER 5
+
+#define TRUE 1
+#define FALSE 0
 
 typedef struct node_s
 {
     int nKeys;
-    int keys[MAX_KEYS];
-    struct node_s *childs[MAX_CHILDS];
-    char isLeave;
+    int keys[ORDER - 1];
+    struct node_s *childs[ORDER];
 } node;
 
-typedef struct bTree_s
-{
-    struct node_s *root;
-    int order;
-} bTree;
-
-void create(bTree *Tree, int order);
-void splitChild(node *father, int position, int order);
-void insert(bTree *myTree, int value);
-void insertNonfull(node *Node, int value, int order);
+void insertKey(node *root, int value, node *child);
+node *insertAtNode(node *root, int value, char *isLeave, int *valueReturned);
+node *insertValue(node *root, int value);
+int searchPos(node *no, int value);
 void print(node *root);
 
 #endif
