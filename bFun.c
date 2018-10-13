@@ -1,6 +1,6 @@
 #include "bFun.h"
 
-void insertKey(node *root, int value, node *child)
+void insertKey(node *root, int value, node *child) // insere uma chave nova
 {
     int nKeys, pos;
 
@@ -19,24 +19,24 @@ void insertKey(node *root, int value, node *child)
     root->nKeys++;
 }
 
-node *insertAtNode(node *root, int value, char *isLeave, int *valueReturned)
+node *insertAtNode(node *root, int value, char *isLeave, int *valueReturned) // insere um valor no nó
 {
     int i, j, pos,
         halfValue;
     node *temp, *child;
 
-    if (root == NULL)
+    if (root == NULL)  // se a raiz for vazia então insere o primeiro valor dela
     {
 
         *isLeave = TRUE;
         *valueReturned = value;
         return (NULL);
     }
-    else
+    else  // se não, insere mais valores
     {
-        pos = searchPos(root, value);
-        if (root->nKeys > pos && root->keys[pos] == value)
-        {
+        pos = searchPos(root, value); // pega posição do nó
+        if (root->nKeys > pos && root->keys[pos] == value) // se tiver um numero de chaves maior que a posição
+        {                                                  // o nó deixa de ser folha
             *isLeave = FALSE;
         }
         else
@@ -84,7 +84,7 @@ node *insertAtNode(node *root, int value, char *isLeave, int *valueReturned)
     }
 }
 
-node *insertValue(node *root, int value)
+node *insertValue(node *root, int value) // insere valor no nó
 {
     char isLeave;
     int valueReturned, i;
@@ -106,7 +106,7 @@ node *insertValue(node *root, int value)
         return (root);
 }
 
-int searchPos(node *no, int value)
+int searchPos(node *no, int value)  // procura posição do nó e valor
 {
     int meio, i, f;
 
@@ -130,7 +130,7 @@ int searchPos(node *no, int value)
     return (i);
 }
 
-void print(node *root)
+void print(node *root) // printa a arvore
 {
     int i;
     if (root != NULL)
