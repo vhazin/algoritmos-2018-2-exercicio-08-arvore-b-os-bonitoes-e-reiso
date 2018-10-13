@@ -1,21 +1,23 @@
+#include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "bFun.h"
 
 int main(void)
 {
-    bTree *myTree = (bTree *)malloc(sizeof(bTree));
-    int order, value;
-    scanf("%d", &value);
-    order = value;
-    create(myTree, order);
-    while (TRUE)
+    node *root;
+    int value;
+
+    root = NULL;
+
+    while (1)
     {
         scanf("%d", &value);
-        if (value == 0)
+        if (!value)
             break;
-        insert(myTree, value);
-        printf("inseri\n");
+        root = insertValue(root, value);
     }
-    print(myTree->root);
-    return 0;
+    print(root);
+
+    return (0);
 }
