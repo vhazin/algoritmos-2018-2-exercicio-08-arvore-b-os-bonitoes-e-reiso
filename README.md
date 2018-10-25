@@ -1,3 +1,9 @@
 # algoritmos-2018-2-exercicio-08-arvore-b-os-bonitoes-e-reiso
-algoritmos-2018-2-exercicio-08-arvore-b-os-bonitoes-e-reiso created by GitHub Classroom
 
+Algoritmo de inserção em Árvore B
+
+## Integrantes do grupo
+
+- Arthur Reis
+- Caio Cordeiro
+- Otacilio Maia
